@@ -3,6 +3,7 @@
 from activities.log_message import LogMessages
 from framework.initialize_environment import InitializeEnviroment
 
+# TODO: QUANDO CHAMAR O PROCESSO
 class RunApplication(LogMessages, InitializeEnviroment):
     def __init__(self):
         try:

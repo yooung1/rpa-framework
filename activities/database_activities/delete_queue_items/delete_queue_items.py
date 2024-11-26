@@ -1,0 +1,1 @@
+# TODO: deletar os queue items existentes no banco de dados e criar novos
