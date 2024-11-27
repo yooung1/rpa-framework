@@ -6,7 +6,5 @@ def get_queue_items(config_data):
     """
     Esta função ira extrair os queue items do banco de dados e trata-los e ira retornar a lista tratada dos queue items
     """
-    get_queue_items_from_db(config_data)
-    # TRATAR OS DADOS DE QUEUE ITEMS RECEBIDOS
-    # AQUI EMBAIXO
-
+    # Retornar a lista com todos os dados dos queue items
+    return get_queue_items_from_db(config_data)

@@ -10,7 +10,7 @@ def read_config_file():
     Lê os dados do arquivo config.json
     """
     # Caminho do arquivo de configuração
-    json_path = os.path.join(os.getcwd(), r'01 - data\config.json')
+    json_path = os.path.join(os.getcwd(), r'data\config.json')
 
     # Verifica se o arquivo existe
     if not os.path.exists(json_path):

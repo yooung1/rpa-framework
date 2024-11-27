@@ -6,11 +6,12 @@ def make_database_connection():
     try:
         # TO-DO: INSERIR KEY VAUT AQUI
         conn = snowflake.connector.connect(
-            user='orch',
+            # banco de dados de teste
+            user='rpaorch',
             password='Rpa2024@',
             account='nra45017.east-us-2.azure',
-            database='ORCHESTRATOR',
-            schema='STRUCTURE',
+            database='FRAMEWORK',
+            schema='PUBLIC',
             quote_identifiers=True
         )
         # Retorna conexão
