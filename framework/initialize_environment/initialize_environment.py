@@ -29,4 +29,3 @@ class InitializeEnviroment(LogJobMessages):
         self.log_message_info("LIMPANDO PASTAS E ELIMINANDO ARQUIVOS")
         clear_create_temp_folders(list_of_directories)
     
-    
