@@ -88,6 +88,7 @@ def get_queue_items_from_db(config_data):
         data = [dict(zip(columns, row)) for row in results]
 
         for row in data:
+            # row['SPECIFIC_CONTENT'] = json.loads(row['SPECIFIC_CONTENT']) -- parsear o SPECIFIC_CONTENT a dict
             list_of_queue_items.append(row)
         return list_of_queue_items
     
