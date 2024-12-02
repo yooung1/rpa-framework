@@ -1,4 +1,3 @@
-from framework.initialize_environment.modules.get_queue_items import get_queue_items
 from modules.clear_create_temp_folders import clear_create_temp_folders
 from modules.create_general_variables import create_general_variables
 from modules.read_config_file import read_config_file
@@ -14,12 +13,13 @@ class InitializeEnviroment(LogJobMessages):
         self.log_message_info("LENDO ARQUIVO DE CONFIGURAÇÃO - config.json")
         return read_config_file()
 
-    def get_queue_items(self, config_data):
-        """
-        Com os parematros extraidos do arquivo config.json ira pegar o Id do processo e extrair os queue_items do banco de dados
-        """
-        self.log_message_info("LENDO E CRIANDO QUEUE ITEMS")
-        get_queue_items(config_data)
+    # TODO: pegar este bloco e jogar no GET_NEXT_QUEUE_ITEM
+    # def get_queue_items(self, config_data):
+    #     """
+    #     Com os parematros extraidos do arquivo config.json ira pegar o Id do processo e extrair os queue_items do banco de dados
+    #     """
+    #     self.log_message_info("LENDO E CRIANDO QUEUE ITEMS")
+    #     get_queue_items(config_data)
     
     def clear_temp_folders(self, list_of_directories):
         """
