@@ -1,0 +1,2 @@
+from modules.kill_all_applications import kill_all_applications
+from modules.open_applications import open_applications
