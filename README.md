@@ -19,7 +19,7 @@ Os itens de fila virão sem JOB_ID, cada vez que um Queue_item seja selecionado 
 ## ***Finalizar bloco de inicialização de variaveis***
 - Finalizar modulo create_general_variables
 
-## ***ESTUDOD E CASE***
+## ***ESTUDO DE CASE***
 - Verificar se é melhor usar instancias de navegadores abertos para o Selenium - ou se é melhor ja abrir pelo Selenium (Modulo process e Initialize all apps)
 
 ## ***Testes***
