@@ -15,9 +15,15 @@ Exceções:
 Usos (Opcional):
     - É possivel alterar os dados que virão do banco de dados
 
-Autor: [Samuel Pierre]
-Última Modificação: [27/11/2024]
+Autor: [Samuel Pierre] - EMAIL [samuel.joseph@apsen.com.br]
+Última Modificação: [02/12/2024]
 """
+
+import sys 
+import os
+
+# Indica o caminho absoluto do framework
+sys.path.append(os.path.abspath(os.path.dirname(__file__) + "/../../.."))
 
 from activities.database_activities.data_base_connection.data_base_connection import make_database_connection
 import json
@@ -48,8 +54,9 @@ def get_queue_items_from_db(config_data):
         
     Exemplo de Retorno:
         [
-            {"id": 1, "name": "task1", "job_id": None, "folders_id": "12345"},
-            {"id": 2, "name": "task2", "job_id": None, "folders_id": "12345"}
+            [{'ID': 101, 'REFERENCE': 'Ref-001', 'CREATION_DATE': datetime.datetime(2024, 11, 27, 5, 57, 47, 812000),
+            'EXECUTION_DATE': datetime.datetime(2024, 11, 27, 5, 57, 47, 812000), 'STATUS': 'Pending', 'RETRY_NUMBER': 1,
+            'JOB_ID': None, 'FOLDERS_ID': 'Folder1', 'SPECIFIC_CONTENT': '{\n  "key1": "value1",\n  "key2": "value2"\n}'}]
         ]
 
     Observações:
@@ -60,8 +67,9 @@ def get_queue_items_from_db(config_data):
     """
 
     # Extrair o process ID dos dados de config
-    process_dict = json.loads(config_data)
-    process_id = process_dict["process_id"]
+    process_dict = json.loads(config_data) # comenta
+    process_id = process_dict["process_id"] # comenta
+    # process_id = 'Folder1' # descomenta
     query = f"""
     SELECT * 
     FROM QUEUE_ITEMS 
@@ -88,6 +96,10 @@ def get_queue_items_from_db(config_data):
         data = [dict(zip(columns, row)) for row in results]
 
         for row in data:
+            # o valor vai vir como uma lista que contem dicionarios
+            # vc vai puxar o indice da lista que sera o primeiro dicionario
+            # e desse primeiro dicionario voce vai puxar o SPECIFIC_CONTENT
+            # depois voce vai transformar esse specific_content num Json e esse json vc consegue tratar como dicionario - ai vc puxa a chave desse dicionario e essa chave ira trazer o valor
             # row['SPECIFIC_CONTENT'] = json.loads(row['SPECIFIC_CONTENT']) -- parsear o SPECIFIC_CONTENT a dict
             list_of_queue_items.append(row)
         return list_of_queue_items
